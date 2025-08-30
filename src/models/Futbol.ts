@@ -1,7 +1,10 @@
 import { Equipo } from './Equipo';
 import { Deporte } from './Deporte';
 export class Futbol extends Deporte {
-  constructor(public nombre: string, public maxPorEquipo: number = 11) {
+  constructor(
+    public readonly nombre: string = 'Fútbol',
+    public readonly maxPorEquipo: number = 11
+  ) {
     super(nombre, maxPorEquipo);
   }
 

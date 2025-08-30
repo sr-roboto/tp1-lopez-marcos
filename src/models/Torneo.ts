@@ -1,19 +1,21 @@
+import type { Partido } from './Partido';
+
 export class Torneo {
   constructor(
     public id: number,
     public nombre: string,
-    private listaPartidos: string[] = []
+    private listaPartidos: Partido[] = []
   ) {}
 
-  programarPartido(partido: string): void {
+  programarPartido(partido: Partido): void {
     this.listaPartidos.push(partido);
   }
 
-  listarPartidos(): string[] {
+  listarPartidos(): Partido[] {
     return this.listaPartidos;
   }
 
-  buscarPartido(partido: string): boolean {
+  buscarPartido(partido: Partido): boolean {
     return this.listaPartidos.includes(partido);
   }
 }
