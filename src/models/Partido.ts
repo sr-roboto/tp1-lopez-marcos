@@ -4,7 +4,7 @@ import { Resultado } from './Resultado';
 
 export class Partido {
   constructor(
-    public id: number,
+    private readonly id: number,
     public local: Equipo,
     public visitante: Equipo,
     public deporte: Deporte,

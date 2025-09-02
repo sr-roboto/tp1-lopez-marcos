@@ -1,6 +1,6 @@
 export class Jugador {
   constructor(
-    public id: number,
+    private readonly id: number,
     public nombre: string,
     public posicion?: string
   ) {}

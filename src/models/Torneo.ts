@@ -2,7 +2,7 @@ import type { Partido } from './Partido';
 
 export class Torneo {
   constructor(
-    public id: number,
+    private readonly id: number,
     public nombre: string,
     private listaPartidos: Partido[] = []
   ) {}
@@ -17,5 +17,9 @@ export class Torneo {
 
   buscarPartido(partido: Partido): boolean {
     return this.listaPartidos.includes(partido);
+  }
+
+  toString(): string {
+    return `Torneo ${this.id}: ${this.nombre} - Partidos programados: ${this.listaPartidos.length}`;
   }
 }

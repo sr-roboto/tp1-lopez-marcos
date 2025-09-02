@@ -51,8 +51,8 @@ const basquet = new Basquet();
 
 console.log('Partido de Fútbol:');
 const partidoFutbol = new Partido(1, equipoA, equipoB, futbol);
-const resultadoFutbol = partidoFutbol.jugar();
-console.log(resultadoFutbol.toString());
+partidoFutbol.jugar();
+console.log(partidoFutbol.toString());
 
 const equipoC = new Equipo('Equipo C');
 equipoC.agregarIntegrante(new Jugador(23, 'LeBron James', 'Alero'));
@@ -72,14 +72,23 @@ equipoD.agregarIntegrante(new Jugador(32, 'Jimmy Butler', 'Alero'));
 
 console.log('Partido de Básquet:');
 const partidoBasquet = new Partido(2, equipoC, equipoD, basquet);
-const resultadoBasquet = partidoBasquet.jugar();
-console.log(resultadoBasquet.toString());
+partidoBasquet.jugar();
+console.log(partidoBasquet.toString());
 
 const torneo = new Torneo(1, 'Torneo Internacional');
 torneo.programarPartido(partidoFutbol);
 torneo.programarPartido(partidoBasquet);
 
+console.log('-----------------------------------------------------------');
+
 console.log('Lista de partidos del Torneo:');
 console.log(torneo.listarPartidos());
 console.log(`¿El partido ${partidoFutbol} de fútbol está en el torneo?`);
 console.log(torneo.buscarPartido(partidoFutbol));
+
+console.log('Validación de equipos para Fútbol:');
+console.log(`¿Equipo A es válido? ${futbol.validar(equipoA)}`);
+console.log(`¿Equipo B es válido? ${futbol.validar(equipoC)}`);
+console.log('Validación de equipos para Básquet:');
+console.log(`¿Equipo A es válido? ${basquet.validar(equipoA)}`);
+console.log(`¿Equipo B es válido? ${basquet.validar(equipoC)}`);
