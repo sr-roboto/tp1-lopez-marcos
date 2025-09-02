@@ -1,17 +1,18 @@
-import { Deporte } from './Deporte';
-import { Equipo } from './Equipo';
+import { v4 as uuidv4 } from 'uuid';
+import type { IIdentificable } from '../interfaces/IIdentificable';
+import type { Deporte } from './Deporte';
+import type { Equipo } from './Equipo';
 import { Resultado } from './Resultado';
 
-export class Partido {
-  private readonly id: number;
-  private static contadorId = 0;
+export class Partido implements IIdentificable {
+  public readonly id: string;
   constructor(
     public local: Equipo,
     public visitante: Equipo,
     public deporte: Deporte,
     public resultado?: Resultado
   ) {
-    this.id = ++Partido.contadorId;
+    this.id = uuidv4();
 
     // Validar que los equipos no sean el mismo
     if (local.nombre === visitante.nombre) {
@@ -44,6 +45,6 @@ export class Partido {
     const resultadoStr = this.resultado
       ? this.resultado.toString()
       : 'Sin jugar';
-    return `Partido ${this.id} de ${this.deporte.nombre}: ${this.local.nombre} vs ${this.visitante.nombre} - ${resultadoStr}`;
+    return `Partido de ${this.deporte.nombre}: ${this.local.nombre} vs ${this.visitante.nombre} - ${resultadoStr}`;
   }
 }

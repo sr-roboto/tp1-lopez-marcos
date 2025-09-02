@@ -1,10 +1,10 @@
 import type { Partido } from './Partido';
+import { v4 as uuidv4 } from 'uuid';
 
 export class Torneo {
-  private readonly id: number;
-  private static contadorId = 0;
+  public readonly id: string;
   constructor(public nombre: string, private listaPartidos: Partido[] = []) {
-    this.id = ++Torneo.contadorId;
+    this.id = uuidv4();
   }
 
   programarPartido(partido: Partido): void {
@@ -20,6 +20,6 @@ export class Torneo {
   }
 
   toString(): string {
-    return `Torneo ${this.id}: ${this.nombre} - Partidos programados: ${this.listaPartidos.length}`;
+    return `Torneo : ${this.nombre} - Partidos programados: ${this.listaPartidos.length}`;
   }
 }

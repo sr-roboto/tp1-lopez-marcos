@@ -11,5 +11,10 @@
   "devDependencies": {
     "typescript": "~5.8.3",
     "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "@types/node": "^24.3.0",
+    "fs": "^0.0.1-security",
+    "uuidv4": "^6.2.13"
   }
 }
