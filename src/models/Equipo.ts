@@ -1,6 +1,7 @@
 import type { ICompetidor } from '../interfaces/ICompetidor';
 import type { Jugador } from './Jugador';
 
+// Esta clase implementa la interfaz ICompetidor para asegurar que cumple con el contrato definido
 export class Equipo implements ICompetidor {
   private integrantes: Jugador[] = [];
 

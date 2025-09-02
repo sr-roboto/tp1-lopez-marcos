@@ -12,6 +12,8 @@ export class Partido {
     public resultado?: Resultado
   ) {
     this.id = ++Partido.contadorId;
+
+    // Validar que los equipos no sean el mismo
     if (local.nombre === visitante.nombre) {
       throw new Error('El equipo local no puede ser el mismo que el visitante');
     }
@@ -30,7 +32,7 @@ export class Partido {
       );
     }
 
-    // Simular el resultado del partido
+    // Simular el resultado del partido usando valores aleatorios
     const golesLocal = Math.floor(Math.random() * 5);
     const golesVisitante = Math.floor(Math.random() * 5);
 

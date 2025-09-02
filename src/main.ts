@@ -75,7 +75,7 @@ const partidoBasquet = new Partido(equipoC, equipoD, basquet);
 partidoBasquet.jugar();
 console.log(partidoBasquet.toString());
 
-const torneo = new Torneo('Torneo Internacional');
+const torneo = new Torneo('Torneo');
 torneo.programarPartido(partidoFutbol);
 torneo.programarPartido(partidoBasquet);
 
