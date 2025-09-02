@@ -1,7 +1,8 @@
+import type { IIdentificable } from '../interfaces/IIdentificable';
 import type { Partido } from './Partido';
 import { v4 as uuidv4 } from 'uuid';
 
-export class Torneo {
+export class Torneo implements IIdentificable {
   public readonly id: string;
   constructor(public nombre: string, private listaPartidos: Partido[] = []) {
     this.id = uuidv4();
@@ -17,9 +18,5 @@ export class Torneo {
 
   buscarPartido(partido: Partido): boolean {
     return this.listaPartidos.includes(partido);
-  }
-
-  toString(): string {
-    return `Torneo : ${this.nombre} - Partidos programados: ${this.listaPartidos.length}`;
   }
 }
