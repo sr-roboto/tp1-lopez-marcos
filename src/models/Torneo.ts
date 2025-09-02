@@ -1,11 +1,11 @@
 import type { Partido } from './Partido';
 
 export class Torneo {
-  constructor(
-    private readonly id: number,
-    public nombre: string,
-    private listaPartidos: Partido[] = []
-  ) {}
+  private readonly id: number;
+  private static contadorId = 0;
+  constructor(public nombre: string, private listaPartidos: Partido[] = []) {
+    this.id = ++Torneo.contadorId;
+  }
 
   programarPartido(partido: Partido): void {
     this.listaPartidos.push(partido);

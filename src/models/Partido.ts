@@ -3,13 +3,15 @@ import { Equipo } from './Equipo';
 import { Resultado } from './Resultado';
 
 export class Partido {
+  private readonly id: number;
+  private static contadorId = 0;
   constructor(
-    private readonly id: number,
     public local: Equipo,
     public visitante: Equipo,
     public deporte: Deporte,
     public resultado?: Resultado
   ) {
+    this.id = ++Partido.contadorId;
     if (local.nombre === visitante.nombre) {
       throw new Error('El equipo local no puede ser el mismo que el visitante');
     }

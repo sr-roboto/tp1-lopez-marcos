@@ -1,9 +1,9 @@
 export class Jugador {
-  constructor(
-    private readonly id: number,
-    public nombre: string,
-    public posicion?: string
-  ) {}
+  private static contadorId = 0;
+  private readonly id: number;
+  constructor(public nombre: string, public posicion?: string) {
+    this.id = ++Jugador.contadorId;
+  }
 
   toString(): string {
     return (

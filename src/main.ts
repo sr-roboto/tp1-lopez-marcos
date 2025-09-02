@@ -7,41 +7,43 @@ import { Torneo } from './models/Torneo';
 
 console.log('Creación de jugadores:');
 
-const jugador1 = new Jugador(1, 'Lionel Messi', 'Delantero');
-const jugador2 = new Jugador(2, 'Cristiano Ronaldo', 'Delantero');
+const jugador1 = new Jugador('Lionel Messi', 'Delantero');
+const jugador2 = new Jugador('Cristiano Ronaldo', 'Delantero');
 
 console.log(jugador1.toString());
 console.log(jugador2.toString());
 
-const equipoA = new Equipo('Equipo A');
-equipoA.agregarIntegrante(jugador1);
-equipoA.agregarIntegrante(jugador2);
-equipoA.agregarIntegrante(new Jugador(5, 'Luka Modrić', 'Centrocampista'));
-equipoA.agregarIntegrante(new Jugador(6, 'Sergio Ramos', 'Defensor'));
-equipoA.agregarIntegrante(new Jugador(7, 'Manuel Neuer', 'Portero'));
-equipoA.agregarIntegrante(new Jugador(8, 'Kevin De Bruyne', 'Centrocampista'));
-equipoA.agregarIntegrante(new Jugador(9, 'Virgil van Dijk', 'Defensor'));
-equipoA.agregarIntegrante(new Jugador(10, 'Robert Lewandowski', 'Delantero'));
-equipoA.agregarIntegrante(new Jugador(11, 'Kylian Mbappé', 'Delantero'));
-equipoA.agregarIntegrante(new Jugador(12, 'Neymar Jr', 'Delantero'));
-equipoA.agregarIntegrante(new Jugador(13, 'Sadio Mané', 'Delantero'));
+const equipoA = new Equipo('Boca');
+equipoA.agregarIntegrante(new Jugador('Sergio Romero', 'Arquero'));
+equipoA.agregarIntegrante(new Jugador('Miguel Merentiel', 'Delantero'));
+equipoA.agregarIntegrante(new Jugador('Leandro Paredes', 'Centrocampista'));
+equipoA.agregarIntegrante(new Jugador('Cristian Lema', 'Defensor'));
+equipoA.agregarIntegrante(new Jugador('Milton Giménez', 'Delantero'));
+equipoA.agregarIntegrante(new Jugador('Ignacio Miramón', 'Centrocampista'));
+equipoA.agregarIntegrante(new Jugador('Marco Pellegrino', 'Defensor'));
+equipoA.agregarIntegrante(new Jugador('Lucas Janson', 'Delantero'));
+equipoA.agregarIntegrante(new Jugador('Edinson Cavani', 'Delantero'));
+equipoA.agregarIntegrante(new Jugador('Lucas Blondel', 'Lateral Derecho'));
+equipoA.agregarIntegrante(new Jugador('Lautaro Di Lollo', 'Defensor'));
 
 console.log('Creación de equipos:');
 console.log(equipoA.toString());
 console.log(`Cantidad de integrantes: ${equipoA.cantidadIntegrantes}`);
 
-const equipoB = new Equipo('Equipo B');
-equipoB.agregarIntegrante(new Jugador(3, 'Neymar Jr', 'Delantero'));
-equipoB.agregarIntegrante(new Jugador(4, 'Kylian Mbappé', 'Delantero'));
-equipoB.agregarIntegrante(new Jugador(14, 'Luka Modrić', 'Centrocampista'));
-equipoB.agregarIntegrante(new Jugador(15, 'Sergio Ramos', 'Defensor'));
-equipoB.agregarIntegrante(new Jugador(16, 'Manuel Neuer', 'Portero'));
-equipoB.agregarIntegrante(new Jugador(17, 'Kevin De Bruyne', 'Centrocampista'));
-equipoB.agregarIntegrante(new Jugador(18, 'Virgil van Dijk', 'Defensor'));
-equipoB.agregarIntegrante(new Jugador(19, 'Robert Lewandowski', 'Delantero'));
-equipoB.agregarIntegrante(new Jugador(20, 'Kylian Mbappé', 'Delantero'));
-equipoB.agregarIntegrante(new Jugador(21, 'Neymar Jr', 'Delantero'));
-equipoB.agregarIntegrante(new Jugador(22, 'Sadio Mané', 'Delantero'));
+const equipoB = new Equipo('River');
+equipoB.agregarIntegrante(new Jugador('Franco Armani', 'Arquero'));
+equipoB.agregarIntegrante(new Jugador('Gonzalo Montiel', 'Lateral Derecho'));
+equipoB.agregarIntegrante(new Jugador('Lucas Martínez Quarta', 'Defensor'));
+equipoB.agregarIntegrante(new Jugador('Paulo Díaz', 'Defensor'));
+equipoB.agregarIntegrante(new Jugador('Marcos Acuña', 'Lateral Izquierdo'));
+equipoB.agregarIntegrante(new Jugador('Nacho Fernández', 'Centrocampista'));
+equipoB.agregarIntegrante(new Jugador('Kranevitter', 'Centrocampista'));
+equipoB.agregarIntegrante(
+  new Jugador('Pity Martínez', 'Centrocampista Ofensivo')
+);
+equipoB.agregarIntegrante(new Jugador('Franco Mastantuono', 'Delantero'));
+equipoB.agregarIntegrante(new Jugador('Maxi Meza', 'Delantero'));
+equipoB.agregarIntegrante(new Jugador('Facundo Colidio', 'Delantero'));
 
 console.log(equipoB.toString());
 console.log(`Cantidad de integrantes: ${equipoB.cantidadIntegrantes}`);
@@ -50,32 +52,30 @@ const futbol = new Futbol();
 const basquet = new Basquet();
 
 console.log('Partido de Fútbol:');
-const partidoFutbol = new Partido(1, equipoA, equipoB, futbol);
+const partidoFutbol = new Partido(equipoA, equipoB, futbol);
 partidoFutbol.jugar();
 console.log(partidoFutbol.toString());
 
-const equipoC = new Equipo('Equipo C');
-equipoC.agregarIntegrante(new Jugador(23, 'LeBron James', 'Alero'));
-equipoC.agregarIntegrante(new Jugador(24, 'Stephen Curry', 'Base'));
-equipoC.agregarIntegrante(new Jugador(25, 'Kevin Durant', 'Ala-pívot'));
-equipoC.agregarIntegrante(
-  new Jugador(26, 'Giannis Antetokounmpo', 'Ala-pívot')
-);
-equipoC.agregarIntegrante(new Jugador(27, 'Kawhi Leonard', 'Alero'));
+const equipoC = new Equipo('Chicago Bulls');
+equipoC.agregarIntegrante(new Jugador('Zach LaVine', 'Escolta'));
+equipoC.agregarIntegrante(new Jugador('Coby White', 'Base'));
+equipoC.agregarIntegrante(new Jugador('Patrick Williams', 'Alero'));
+equipoC.agregarIntegrante(new Jugador('Nikola Vucevic', 'Pívot'));
+equipoC.agregarIntegrante(new Jugador('Ayo Dosunmu', 'Escolta/Base'));
 
-const equipoD = new Equipo('Equipo D');
-equipoD.agregarIntegrante(new Jugador(28, 'James Harden', 'Escolta'));
-equipoD.agregarIntegrante(new Jugador(29, 'Anthony Davis', 'Pívot'));
-equipoD.agregarIntegrante(new Jugador(30, 'Damian Lillard', 'Base'));
-equipoD.agregarIntegrante(new Jugador(31, 'Chris Paul', 'Base'));
-equipoD.agregarIntegrante(new Jugador(32, 'Jimmy Butler', 'Alero'));
+const equipoD = new Equipo('Toronto Raptors');
+equipoD.agregarIntegrante(new Jugador('Scottie Barnes', 'Alero/Ala-pívot'));
+equipoD.agregarIntegrante(new Jugador('RJ Barrett', 'Escolta/Alero'));
+equipoD.agregarIntegrante(new Jugador('Immanuel Quickley', 'Base'));
+equipoD.agregarIntegrante(new Jugador('Jakob Poeltl', 'Pívot'));
+equipoD.agregarIntegrante(new Jugador('Gradey Dick', 'Escolta/Alero'));
 
 console.log('Partido de Básquet:');
-const partidoBasquet = new Partido(2, equipoC, equipoD, basquet);
+const partidoBasquet = new Partido(equipoC, equipoD, basquet);
 partidoBasquet.jugar();
 console.log(partidoBasquet.toString());
 
-const torneo = new Torneo(1, 'Torneo Internacional');
+const torneo = new Torneo('Torneo Internacional');
 torneo.programarPartido(partidoFutbol);
 torneo.programarPartido(partidoBasquet);
 
